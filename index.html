@@ -55,9 +55,23 @@
             <section>
               <h5 class="fw-semibold mb-3">List of Todos</h5>
 
-              <ul class="list-group" id="todo-list">
-                <li class="list-group-item text-muted text-center">No todos available</li>
-              </ul>
+              <div class="table-responsive">
+                <table class="table todo-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                      <th class="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="todo-table-body">
+                    <tr>
+                      <td colspan="4" class="text-muted text-center">No todos available</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
 
             <!-- Footer -->
