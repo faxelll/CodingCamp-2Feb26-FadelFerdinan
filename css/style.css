@@ -54,13 +54,17 @@ body {
   font-weight: 500;
 }
 
-.badge.bg-success {
-  background-color: #16a34a !important;
+.badge.bg-danger {
+  background-color: #dc2626 !important;
 }
 
-.badge.bg-warning {
-  background-color: #facc15 !important;
-  color: #1f2937 !important;
+.btn-warning {
+  background-color: #f59e0b;
+  border: none;
+}
+
+.btn-warning:hover {
+  opacity: 0.9;
 }
 
 .todo-table .btn {

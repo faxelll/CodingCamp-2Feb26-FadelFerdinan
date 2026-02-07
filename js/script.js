@@ -46,26 +46,39 @@ function renderTodos(data = todos) {
         <td class="text-start">${item.task}</td>
         <td>${item.date}</td>
         <td>
-          <span class="badge ${item.status === "Done" ? "bg-success" : "bg-warning text-dark"}">
-            ${item.status}
-          </span>
-        </td>
+  <span class="badge ${item.status === "Done" ? "bg-success" : item.status === "Failed" ? "bg-danger" : "bg-warning text-dark"}">
+    ${item.status}
+  </span>
+</td>
         <td>
-          <button
-            class="btn btn-sm btn-success me-1"
-            onclick="toggleStatus(${index})"
-            title="Toggle status"
-          >
-            ✓
-          </button>
-          <button
-            class="btn btn-sm btn-danger"
-            onclick="deleteTodo(${index})"
-            title="Delete"
-          >
-            ✕
-          </button>
-        </td>
+  <!-- DONE -->
+  <button
+    class="btn btn-sm btn-success me-1"
+    onclick="setStatus(${index}, 'Done')"
+    title="Mark as Done"
+  >
+    <i class="bi bi-check-lg"></i>
+  </button>
+
+  <!-- FAILED -->
+  <button
+    class="btn btn-sm btn-warning me-1"
+    onclick="setStatus(${index}, 'Failed')"
+    title="Mark as Failed"
+  >
+    <i class="bi bi-x-circle"></i>
+  </button>
+
+  <!-- DELETE -->
+  <button
+    class="btn btn-sm btn-danger"
+    onclick="deleteTodo(${index})"
+    title="Delete"
+  >
+    <i class="bi bi-trash"></i>
+  </button>
+</td>
+
       </tr>
     `;
   });
@@ -108,5 +121,9 @@ function applyFilter() {
 // RESET FILTER
 function resetFilter() {
   document.getElementById("filterInput").value = "";
+  renderTodos();
+}
+function setStatus(index, status) {
+  todos[index].status = status;
   renderTodos();
 }
