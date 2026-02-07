@@ -1,0 +1,22 @@
+body {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+}
+
+.btn-custom {
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-custom:hover {
+  transform: scale(1.04);
+  opacity: 0.95;
+}
+
+.todo-item {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.todo-item:hover {
+  background-color: #f8fafc;
+  transform: translateX(6px);
+}
